@@ -166,7 +166,7 @@ class PostWidget1 extends StatelessWidget {
                 label: "comment"),
             NamedIcon(
                 icon: Icon(
-                  Icons.compare_arrows_outlined,
+                  Icons.cached_outlined,
                   size: 18,
                 ),
                 label: "Repost"),
