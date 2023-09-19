@@ -11,7 +11,6 @@ class MyNetworkScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var mediaHeight = MediaQuery.of(context).size.height;
     var mediaWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
