@@ -10,10 +10,15 @@ class PostScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(
-          Icons.close,
-          size: 30,
-          weight: .1,
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Icon(
+            Icons.close,
+            size: 30,
+            weight: .1,
+          ),
         ),
         title: Row(children: [
           CircleAvatar(
