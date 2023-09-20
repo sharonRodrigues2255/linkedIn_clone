@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:linkedin_clone/utils/contants/colors.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation.dart';
+import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/post/post_screen.dart';
 
 class AnimatedBottomNavigationBar extends StatelessWidget {
   final changeindex;
@@ -30,9 +31,12 @@ class AnimatedBottomNavigationBar extends StatelessWidget {
                 ),
                 label: "My Network"),
             BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.add_box,
-                ),
+                icon: IconButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => PostScreen()));
+                    },
+                    icon: Icon(Icons.add_box)),
                 label: "Post"),
             BottomNavigationBarItem(
                 icon: Icon(

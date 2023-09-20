@@ -9,6 +9,6 @@ myfont({size = 20.0, color = kblack, weight = FontWeight.bold}) {
   return TextStyle(fontSize: size, color: color, fontWeight: weight);
 }
 
-myfontNormal({size = 15.0, color = kblack, weight = FontWeight.w500}) {
+myfontNormal({size = 15.0, color = kblack, weight = FontWeight.w400}) {
   return TextStyle(fontSize: size, fontWeight: weight, color: color);
 }
