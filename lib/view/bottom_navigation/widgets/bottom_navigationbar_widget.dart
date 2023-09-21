@@ -12,7 +12,7 @@ class AnimatedBottomNavigationBar extends StatelessWidget {
     return AnimatedContainer(
       duration: Duration(milliseconds: 1000),
       curve: Curves.fastLinearToSlowEaseIn,
-      height: isVisible ? 50 : 0,
+      height: isVisible ? 60 : 0,
       child: SingleChildScrollView(
         child: BottomNavigationBar(
           onTap: changeindex,
