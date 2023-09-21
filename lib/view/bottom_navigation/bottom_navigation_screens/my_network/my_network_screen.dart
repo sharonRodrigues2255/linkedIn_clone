@@ -26,7 +26,7 @@ class MyNetworkScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Card(
-              elevation: 5,
+              elevation: 3,
               child: Container(
                 height: 230,
                 width: double.infinity,
