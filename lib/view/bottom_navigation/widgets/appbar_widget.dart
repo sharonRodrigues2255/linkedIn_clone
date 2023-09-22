@@ -58,17 +58,47 @@ class AppBarWidget extends StatelessWidget {
         floating: true,
         pinned: index == 1 ? true : false,
         bottom: index == 3
-            ? TabBar(tabs: [
-                Container(
-                  child: Text("All"),
+            ? PreferredSize(
+                preferredSize: Size.fromHeight(50),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: 30,
+                      width: 300,
+                      child: TabBar(
+                        indicator: BoxDecoration(
+                            color: Colors.green[600],
+                            borderRadius: BorderRadius.circular(30)),
+                        tabs: [
+                          Container(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 5),
+                              child: Text("All"),
+                            ),
+                          ),
+                          Container(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 5),
+                              child: Text("My posts"),
+                            ),
+                          ),
+                          Container(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 5),
+                              child: Text("mentions"),
+                            ),
+                          )
+                        ],
+                        labelColor: kwhite,
+                      ),
+                    ),
+                  ],
                 ),
-                Container(
-                  child: Text("My posts"),
-                ),
-                Container(
-                  child: Text("mentions"),
-                )
-              ])
+              )
             : null);
   }
 }
