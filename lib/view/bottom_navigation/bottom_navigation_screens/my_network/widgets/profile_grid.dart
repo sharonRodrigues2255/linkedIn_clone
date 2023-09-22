@@ -23,6 +23,7 @@ class ProfileGrid extends StatelessWidget {
         height: 210,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             SizedBox(
               height: 150,
@@ -72,12 +73,13 @@ class ProfileGrid extends StatelessWidget {
                 )
               ],
             ),
-            height20,
+            height10,
             CurveRectangle(
               mediaWidth: mediaWidth,
               title: "Connect",
               color: kblue,
-            )
+            ),
+            height10,
           ],
         ),
       ),

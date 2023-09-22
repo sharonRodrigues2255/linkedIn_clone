@@ -16,7 +16,7 @@ class CurveRectangle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 35,
+      height: 30,
       width: mediaWidth * .40,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
