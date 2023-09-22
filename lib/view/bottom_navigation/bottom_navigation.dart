@@ -52,23 +52,26 @@ class _BottomNavigationState extends State<BottomNavigation> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: const DrawerWidget(),
-      body: SafeArea(
-        child: NestedScrollView(
-            controller: seclectedIndex == 1 ? null : scrollController,
-            floatHeaderSlivers: true,
-            headerSliverBuilder: (context, isVisible) {
-              return [
-                AppBarWidget(
-                  index: seclectedIndex,
-                )
-              ];
-            },
-            body: PageList.pagelist[seclectedIndex]),
-      ),
-      bottomNavigationBar: AnimatedBottomNavigationBar(
-        changeindex: changeIndex,
+    return DefaultTabController(
+      length: seclectedIndex == 3 ? 3 : 0,
+      child: Scaffold(
+        drawer: const DrawerWidget(),
+        body: SafeArea(
+          child: NestedScrollView(
+              controller: seclectedIndex == 1 ? null : scrollController,
+              floatHeaderSlivers: true,
+              headerSliverBuilder: (context, isVisible) {
+                return [
+                  AppBarWidget(
+                    index: seclectedIndex,
+                  )
+                ];
+              },
+              body: PageList.pagelist[seclectedIndex]),
+        ),
+        bottomNavigationBar: AnimatedBottomNavigationBar(
+          changeindex: changeIndex,
+        ),
       ),
     );
   }

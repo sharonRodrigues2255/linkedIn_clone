@@ -12,52 +12,64 @@ class AppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      leading: Padding(
-          padding: const EdgeInsets.only(left: 8, top: 8, bottom: 8),
-          child: InkWell(
-            onTap: () {
-              return Scaffold.of(context).openDrawer();
-            },
-            child: Container(
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: kblack,
-                  image: DecorationImage(
-                      fit: BoxFit.contain,
-                      image: NetworkImage(Profile.profilePicture))),
-            ),
-          )),
-      title: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8),
-        child: Container(
-          height: 30,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Color.fromARGB(255, 242, 240, 240)),
-          child: Row(
-            children: [
-              width10,
-              Icon(
-                Icons.search,
-                size: 20,
-                color: Colors.black,
+        leading: Padding(
+            padding: const EdgeInsets.only(left: 8, top: 8, bottom: 8),
+            child: InkWell(
+              onTap: () {
+                return Scaffold.of(context).openDrawer();
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: kblack,
+                    image: DecorationImage(
+                        fit: BoxFit.contain,
+                        image: NetworkImage(Profile.profilePicture))),
               ),
-              width10,
-              Text(
-                "search",
-                style: myfont(weight: regular, color: kgrey, size: 18.0),
-              )
-            ],
+            )),
+        title: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          child: Container(
+            height: 30,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Color.fromARGB(255, 242, 240, 240)),
+            child: Row(
+              children: [
+                width10,
+                Icon(
+                  Icons.search,
+                  size: 20,
+                  color: Colors.black,
+                ),
+                width10,
+                Text(
+                  "search",
+                  style: myfont(weight: regular, color: kgrey, size: 18.0),
+                )
+              ],
+            ),
           ),
         ),
-      ),
-      actions: index == 4
-          ? [Icon(Icons.more_vert), width20, AppBarMessageIcon(), width10]
-          : [AppBarMessageIcon(), width10],
-      toolbarHeight: 45,
-      floating: true,
-      pinned: index == 1 ? true : false,
-    );
+        actions: index == 4
+            ? [Icon(Icons.more_vert), width20, AppBarMessageIcon(), width10]
+            : [AppBarMessageIcon(), width10],
+        toolbarHeight: 45,
+        floating: true,
+        pinned: index == 1 ? true : false,
+        bottom: index == 3
+            ? TabBar(tabs: [
+                Container(
+                  child: Text("All"),
+                ),
+                Container(
+                  child: Text("My posts"),
+                ),
+                Container(
+                  child: Text("mentions"),
+                )
+              ])
+            : null);
   }
 }
 
