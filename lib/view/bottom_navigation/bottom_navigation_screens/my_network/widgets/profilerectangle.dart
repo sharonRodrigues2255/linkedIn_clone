@@ -5,10 +5,9 @@ import 'package:linkedin_clone/utils/contants/profile_data.dart';
 import 'package:linkedin_clone/view/profile_page/widgets/curve_rectangle.dart';
 
 class ProfileRectangleView extends StatelessWidget {
-  const ProfileRectangleView({
-    super.key,
-    required this.mediaWidth,
-  });
+  const ProfileRectangleView(
+      {super.key, required this.mediaWidth, required this.index});
+  final int index;
 
   final double mediaWidth;
 
@@ -45,7 +44,7 @@ class ProfileRectangleView extends StatelessWidget {
                           radius: 55,
                           backgroundColor: Colors.pinkAccent,
                           backgroundImage:
-                              AssetImage(Profile.connection[0]["picture"])),
+                              AssetImage(Profile.connection[index]["picture"])),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -79,10 +78,10 @@ class ProfileRectangleView extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      Profile.connection[0]["name"],
+                      Profile.connection[index]["name"],
                       style: myfont(size: 16.0),
                     ),
-                    Text(Profile.connection[0]["headline"]),
+                    Text(Profile.connection[index]["headline"]),
                   ],
                 ),
               ),

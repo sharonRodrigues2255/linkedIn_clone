@@ -6,12 +6,10 @@ import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/widgets/profile_grid.dart';
 
 class GridList extends StatelessWidget {
-  const GridList({
-    super.key,
-    required this.mediaWidth,
-  });
+  const GridList({super.key, required this.mediaWidth, required this.count});
 
   final double mediaWidth;
+  final int count;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +22,7 @@ class GridList extends StatelessWidget {
         ),
         GridView.builder(
             padding: EdgeInsets.all(8),
-            itemCount: 4,
+            itemCount: count,
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
