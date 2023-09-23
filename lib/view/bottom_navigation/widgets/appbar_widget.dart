@@ -5,10 +5,18 @@ import 'package:linkedin_clone/utils/contants/myfont.dart';
 import 'package:linkedin_clone/utils/contants/profile_data.dart';
 import 'package:linkedin_clone/view/messages_page/messages.dart';
 
-class AppBarWidget extends StatelessWidget {
+class AppBarWidget extends StatefulWidget {
   final int index;
   const AppBarWidget({super.key, required this.index});
 
+  @override
+  State<AppBarWidget> createState() => _AppBarWidgetState();
+}
+
+List<String> tabs = [" All ", " My Post ", " Mentions "];
+int tabIndex = 0;
+
+class _AppBarWidgetState extends State<AppBarWidget> {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
@@ -51,52 +59,65 @@ class AppBarWidget extends StatelessWidget {
             ),
           ),
         ),
-        actions: index == 4
+        actions: widget.index == 4
             ? [Icon(Icons.more_vert), width20, AppBarMessageIcon(), width10]
             : [AppBarMessageIcon(), width10],
         toolbarHeight: 45,
         floating: true,
-        pinned: index == 1 ? true : false,
-        bottom: index == 3
+        pinned: widget.index == 1 ? true : false,
+        bottom: widget.index == 3
             ? PreferredSize(
                 preferredSize: Size.fromHeight(50),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Container(
-                      height: 30,
-                      width: 300,
-                      child: TabBar(
-                        indicator: BoxDecoration(
-                            color: Colors.green[600],
-                            borderRadius: BorderRadius.circular(30)),
-                        tabs: [
-                          Container(
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 5),
-                              child: Text("All"),
-                            ),
-                          ),
-                          Container(
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 5),
-                              child: Text("My posts"),
-                            ),
-                          ),
-                          Container(
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 5),
-                              child: Text("mentions"),
-                            ),
-                          )
-                        ],
-                        labelColor: kwhite,
-                      ),
+                child: Container(
+                  height: 30,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Row(
+                      children: [
+                        ListView.builder(
+                            shrinkWrap: true,
+                            physics: NeverScrollableScrollPhysics(),
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 3,
+                            itemBuilder: (context, index) {
+                              return Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5),
+                                child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      tabIndex = index;
+                                    });
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        color: index == tabIndex
+                                            ? const Color.fromARGB(
+                                                255, 58, 92, 59)
+                                            : kwhite,
+                                        border: Border.all(color: kgrey),
+                                        borderRadius:
+                                            BorderRadius.circular(30)),
+                                    child: Center(
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(4.0),
+                                        child: Text(
+                                          tabs[index],
+                                          style: TextStyle(
+                                              color: index == tabIndex
+                                                  ? kwhite
+                                                  : Colors.black54,
+                                              fontWeight: FontWeight.w800),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               )
             : null);
