@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/notifications/tabs.dart';
+import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/notifications/tabs/all.dart';
+import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/notifications/tabs/mentions.dart';
+import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/notifications/tabs/my_posts.dart';
 import 'package:linkedin_clone/view/bottom_navigation/widgets/appbar_widget.dart';
 
 class NotificationScreen extends StatefulWidget {
