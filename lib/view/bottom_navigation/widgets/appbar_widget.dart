@@ -14,7 +14,8 @@ class AppBarWidget extends StatefulWidget {
 }
 
 List<String> tabs = [" All ", " My Post ", " Mentions "];
-int tabIndex = 0;
+
+ValueNotifier<int> tabindexnotifier = ValueNotifier(0);
 
 class _AppBarWidgetState extends State<AppBarWidget> {
   @override
@@ -85,13 +86,13 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                                     const EdgeInsets.symmetric(horizontal: 5),
                                 child: InkWell(
                                   onTap: () {
-                                    setState(() {
-                                      tabIndex = index;
-                                    });
+                                    tabindexnotifier.value = index;
+                                    print(tabindexnotifier.value);
+                                    setState(() {});
                                   },
                                   child: Container(
                                     decoration: BoxDecoration(
-                                        color: index == tabIndex
+                                        color: index == tabindexnotifier.value
                                             ? const Color.fromARGB(
                                                 255, 58, 92, 59)
                                             : kwhite,
@@ -104,7 +105,8 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                                         child: Text(
                                           tabs[index],
                                           style: TextStyle(
-                                              color: index == tabIndex
+                                              color: index ==
+                                                      tabindexnotifier.value
                                                   ? kwhite
                                                   : Colors.black54,
                                               fontWeight: FontWeight.w800),
