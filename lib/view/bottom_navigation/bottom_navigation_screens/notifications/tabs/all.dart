@@ -6,7 +6,7 @@ class All extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(itemBuilder: (context, index) {
-      return ListTile(
+      return const ListTile(
         leading: CircleAvatar(
           radius: 30,
         ),
