@@ -10,7 +10,7 @@ class Notifs {
             children: [TextSpan(text: "posted : $post")]));
   }
 
-  static congratsnewposition(
+  static congratsNewPosition(
       {required String name,
       required String position,
       required String company}) {
