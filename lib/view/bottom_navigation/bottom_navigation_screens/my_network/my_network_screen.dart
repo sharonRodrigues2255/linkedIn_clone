@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/screens/manage_my_network.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/widgets/custom_divider.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/widgets/gridlist.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/widgets/profilerectangle.dart';
@@ -15,8 +16,14 @@ class MyNetworkScreen extends StatelessWidget {
         body: SingleChildScrollView(
       child: Column(
         children: [
-          TextAndArrow(
-            text: "Manage my network",
+          InkWell(
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => ManageMyNetwork()));
+            },
+            child: TextAndArrow(
+              text: "Manage my network",
+            ),
           ),
           const CustomDivider(),
           TextAndArrow(text: "Invitations (0)"),
