@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/screens/invitations.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/screens/manage_my_network.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/widgets/custom_divider.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/widgets/gridlist.dart';
@@ -26,7 +27,12 @@ class MyNetworkScreen extends StatelessWidget {
             ),
           ),
           const CustomDivider(),
-          TextAndArrow(text: "Invitations (0)"),
+          InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => Invitations()));
+              },
+              child: TextAndArrow(text: "Invitations (0)")),
           CustomDivider(),
           GridList(
             mediaWidth: mediaWidth,
