@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:linkedin_clone/utils/contants/colors.dart';
 import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
+import 'package:linkedin_clone/utils/contants/myfont.dart';
+import 'package:linkedin_clone/utils/images/image_constants.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/jobs/jobs_database/job_functions.dart';
+import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/jobs/widgets/joblistbuilder.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/widgets/custom_divider.dart';
+import 'package:linkedin_clone/view/profile_page/widgets/curve_rectangle.dart';
 import 'package:linkedin_clone/view/profile_page/widgets/show_all_widget.dart';
 import 'package:linkedin_clone/view/profile_page/widgets/title_tile_widget.dart';
 
@@ -57,78 +61,60 @@ class _JobScreenState extends State<JobScreen> {
             thick: 16.0,
           ),
           TitileTile(title: "Recomended jobs for you"),
-          ListView.builder(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: 3,
-            itemBuilder: (context, index) {
-              final job = recomendedJobs[index];
-              final companyName = job["companyName"];
-              final jobtitle = job["jobTitle"];
-              return Column(
-                children: [
-                  ListTile(
-                    leading: Container(
-                      height: 50,
-                      width: 50,
-                      color: Colors.accents[index],
-                      child: Center(
-                          child: Text(
-                        companyName[index],
-                        style: TextStyle(fontSize: 25),
-                      )),
-                    ),
-                    title: Text(jobtitle),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(companyName),
-                        Text(
-                          '${job["location"]} (${job["remoteStatus"]})',
-                          style: TextStyle(fontSize: 12),
-                        ),
-                      ],
-                    ),
-                    trailing: Icon(Icons.bookmark_outline),
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 80,
-                      ),
-                      Transform.rotate(
-                          angle: 125,
-                          child: Icon(
-                            Icons.send,
-                            size: 20,
-                          )),
-                      Text(
-                        "Message the job poster directly",
-                        style: TextStyle(fontSize: 12, color: kgrey),
-                      )
-                    ],
-                  ),
-                  height10,
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 80,
-                      ),
-                      Text(
-                        job["timePosted"],
-                        style: TextStyle(
-                            fontSize: 12,
-                            color: Color.fromARGB(255, 52, 123, 55)),
-                      )
-                    ],
-                  ),
-                  Divider()
-                ],
-              );
-            },
+          JoblistBuilder(
+            joblist: recomendedJobs,
           ),
           ShowAllWidget(title: "Show all"),
           CustomDivider(),
+          TitileTile(title: "Hybrid jobs"),
+          JoblistBuilder(joblist: hybridJobs),
+          ShowAllWidget(title: "Show all"),
+          CustomDivider(),
+          TitileTile(title: "Remote Jobs"),
+          JoblistBuilder(joblist: remoteJobs),
+          ShowAllWidget(title: "Show all"),
+          CustomDivider(),
+          TitileTile(title: "More Jobs"),
+          JoblistBuilder(
+            joblist: moreJobs,
+            length: 10,
+          ),
+          ShowAllWidget(title: "Show all"),
+          CustomDivider(),
+          TitileTile(title: "Recomended for you"),
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                    height: 200,
+                    width: 200,
+                    child: Image(image: AssetImage(ImageConstants.notifbg))),
+                Text(
+                  "Want more jobs?",
+                  style: myfontNormal(size: 20.0, weight: FontWeight.w300),
+                ),
+                height10,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Text(
+                    "SEarch for jobs and we'll serve recommendations that match your criteria",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.black54),
+                  ),
+                ),
+                height20,
+                Text(
+                  "Search jobs",
+                  style:
+                      myfont(color: kblue, size: 16.0, weight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 50,
+                )
+              ],
+            ),
+          )
         ],
       ),
     ));

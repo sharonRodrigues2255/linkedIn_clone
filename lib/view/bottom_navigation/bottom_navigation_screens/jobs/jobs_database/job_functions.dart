@@ -16,5 +16,10 @@ void jObsTypes() {
     } else {
       moreJobs.add(item);
     }
+    if (item["remoteStatus"] == "Remote") {
+      hybridJobs.add(item);
+    } else if (item["remoteStatus"] == "Hybrid") {
+      remoteJobs.add(item);
+    }
   }
 }
