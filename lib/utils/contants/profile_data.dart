@@ -23,6 +23,10 @@ class Profile {
 
   static String followers = "1234";
   static String connections = "25532";
+  static String peopleIFollow = "21";
+  static String pages = "27";
+  static String numberOfGroups = "5";
+  static String newsletters = "5";
 
   static List<String> skills = [
     "flutter",
