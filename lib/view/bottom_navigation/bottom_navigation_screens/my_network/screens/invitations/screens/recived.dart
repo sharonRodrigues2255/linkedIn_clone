@@ -27,8 +27,7 @@ class ReceivedScreen extends StatelessWidget {
                   style: TextStyle(color: kwhite, fontWeight: FontWeight.bold),
                 )),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Color.fromARGB(255, 57, 130, 59)),
+                    borderRadius: BorderRadius.circular(30), color: tabColor),
               ),
             )
           ],
