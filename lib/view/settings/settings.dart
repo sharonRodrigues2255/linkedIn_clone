@@ -46,7 +46,7 @@ class Settings extends StatelessWidget {
                                 ? AccountPreferences()
                                 : index == 1
                                     ? SignInAndSecurity()
-                                    : VisibilityWidget()));
+                                    : VisibilityScreen()));
                       },
                       child: Column(
                         children: [
