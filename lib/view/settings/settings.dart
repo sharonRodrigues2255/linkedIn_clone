@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
 import 'package:linkedin_clone/utils/contants/profile_data.dart';
 import 'package:linkedin_clone/view/settings/screens/account_preference.dart';
+import 'package:linkedin_clone/view/settings/screens/security.dart';
+import 'package:linkedin_clone/view/settings/screens/visibility.dart';
 import 'package:linkedin_clone/view/settings/widgets/question_mark_icon.dart';
 import 'package:linkedin_clone/view/settings/widgets/settings_item.dart';
 
@@ -40,7 +42,11 @@ class Settings extends StatelessWidget {
                     return InkWell(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => AccountPreferences()));
+                            builder: (context) => index == 0
+                                ? AccountPreferences()
+                                : index == 1
+                                    ? SignInAndSecurity()
+                                    : VisibilityWidget()));
                       },
                       child: Column(
                         children: [
