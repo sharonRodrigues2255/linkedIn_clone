@@ -13,7 +13,7 @@ class SettingsItems extends StatelessWidget {
     return Row(
       children: [
         icon,
-        width10,
+        width20,
         Text(
           title,
           style: myfont(size: size),
