@@ -14,6 +14,7 @@ import 'package:linkedin_clone/view/profile_page/widgets/curve_rectangle.dart';
 import 'package:linkedin_clone/view/profile_page/widgets/profile_card_widget.dart';
 import 'package:linkedin_clone/view/profile_page/widgets/resourses_item.dart';
 import 'package:linkedin_clone/view/profile_page/widgets/title_tile_widget.dart';
+import 'package:linkedin_clone/view/settings/screens/account_preference.dart';
 
 // ignore: must_be_immutable
 class ProfileScreen extends StatefulWidget {
@@ -42,10 +43,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               actions: Row(
                 children: [
-                  Icon(
-                    Icons.settings_rounded,
-                    size: 25,
-                    color: Color.fromARGB(255, 107, 85, 85),
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => AccountPreferences()));
+                    },
+                    child: Icon(
+                      Icons.settings_rounded,
+                      size: 25,
+                      color: Color.fromARGB(255, 107, 85, 85),
+                    ),
                   ),
                   width10
                 ],

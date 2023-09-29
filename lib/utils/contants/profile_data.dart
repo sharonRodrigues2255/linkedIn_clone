@@ -74,7 +74,42 @@ class Profile {
       "name": "WWF",
       "members": "23424545",
       "picture": "assets/images/groupsimages/fluttericon.png"
-    }
+    },
+    {
+      "name": "Dart Enthusiasts",
+      "members": "12345678",
+      "picture": "assets/images/groupsimages/flutter.jpg"
+    },
+    {
+      "name": "Mobile Dev Club",
+      "members": "87654321",
+      "picture": "assets/images/groupsimages/fluttericon.png"
+    },
+    {
+      "name": "Tech Innovators",
+      "members": "56789012",
+      "picture": "assets/images/groupsimages/flutter.jpg"
+    },
+    {
+      "name": "Code Wizards",
+      "members": "98765432",
+      "picture": "assets/images/groupsimages/fluttericon.png"
+    },
+    {
+      "name": "Design Gurus",
+      "members": "34567890",
+      "picture": "assets/images/groupsimages/flutter.jpg"
+    },
+    {
+      "name": "Open Source Advocates",
+      "members": "65432109",
+      "picture": "assets/images/groupsimages/fluttericon.png"
+    },
+    {
+      "name": "Game Developers",
+      "members": "21098765",
+      "picture": "assets/images/groupsimages/flutter.jpg"
+    },
   ];
 
   static List<Map> connection = [
