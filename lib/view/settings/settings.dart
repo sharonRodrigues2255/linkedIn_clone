@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
 import 'package:linkedin_clone/utils/contants/profile_data.dart';
 import 'package:linkedin_clone/view/settings/screens/account_preference.dart';
+import 'package:linkedin_clone/view/settings/screens/data_privacy.dart';
 import 'package:linkedin_clone/view/settings/screens/security.dart';
 import 'package:linkedin_clone/view/settings/screens/visibility.dart';
 import 'package:linkedin_clone/view/settings/widgets/question_mark_icon.dart';
@@ -46,7 +47,9 @@ class Settings extends StatelessWidget {
                                 ? AccountPreferences()
                                 : index == 1
                                     ? SignInAndSecurity()
-                                    : VisibilityScreen()));
+                                    : index == 2
+                                        ? VisibilityScreen()
+                                        : DataPrivacy()));
                       },
                       child: Column(
                         children: [
