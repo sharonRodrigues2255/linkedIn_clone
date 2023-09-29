@@ -4,6 +4,7 @@ import 'package:linkedin_clone/utils/contants/profile_data.dart';
 import 'package:linkedin_clone/view/settings/screens/account_preference.dart';
 import 'package:linkedin_clone/view/settings/screens/advertising_data.dart';
 import 'package:linkedin_clone/view/settings/screens/data_privacy.dart';
+import 'package:linkedin_clone/view/settings/screens/notifications.dart';
 import 'package:linkedin_clone/view/settings/screens/security.dart';
 import 'package:linkedin_clone/view/settings/screens/visibility.dart';
 import 'package:linkedin_clone/view/settings/widgets/question_mark_icon.dart';
@@ -52,7 +53,9 @@ class Settings extends StatelessWidget {
                                         ? VisibilityScreen()
                                         : index == 3
                                             ? DataPrivacy()
-                                            : AdvertisingData()));
+                                            : index == 4
+                                                ? AdvertisingData()
+                                                : NotificationsSettings()));
                       },
                       child: Column(
                         children: [
