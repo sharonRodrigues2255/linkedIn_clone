@@ -93,10 +93,22 @@ class _SentScreenState extends State<SentScreen> {
                 )
               : selectedindex == 1
                   ? Container(
-                      color: Colors.red,
+                      child: Center(
+                        child: Image(
+                            height: 220,
+                            width: 220,
+                            image: AssetImage(
+                                "assets/images/noinvitaionsimage2.jpg")),
+                      ),
                     )
                   : Container(
-                      color: Colors.blue,
+                      child: Center(
+                        child: Image(
+                            height: 220,
+                            width: 220,
+                            image: AssetImage(
+                                "assets/images/noinvitaionsimage2.jpg")),
+                      ),
                     ),
         )
       ],

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:linkedin_clone/utils/contants/colors.dart';
 import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
 import 'package:linkedin_clone/utils/contants/myfont.dart';
 import 'package:linkedin_clone/utils/contants/profile_data.dart';
 import 'package:linkedin_clone/view/profile_page/profile_page.dart';
+import 'package:linkedin_clone/view/settings/settings.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({
@@ -80,7 +82,27 @@ class DrawerWidget extends StatelessWidget {
                 Text(
                   "Events",
                   style: myfont(),
-                )
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 2 - 100,
+                ),
+                TextButton.icon(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.call_to_action_rounded,
+                      color: Colors.amber,
+                    ),
+                    label: Text(
+                      "Try premium for free",
+                      style: TextStyle(color: kblack),
+                    )),
+                TextButton.icon(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => Settings()));
+                    },
+                    icon: Icon(Icons.settings),
+                    label: Text("Settings", style: TextStyle(color: kblack)))
               ],
             ),
           ),
