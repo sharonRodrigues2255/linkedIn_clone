@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:linkedin_clone/utils/contants/colors.dart';
 import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
 import 'package:linkedin_clone/utils/contants/profile_data.dart';
+import 'package:linkedin_clone/view/settings/screens/account_preference.dart';
+import 'package:linkedin_clone/view/settings/widgets/question_mark_icon.dart';
 import 'package:linkedin_clone/view/settings/widgets/settings_item.dart';
 
 class Settings extends StatelessWidget {
@@ -11,17 +12,7 @@ class Settings extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          CircleAvatar(
-              radius: 12,
-              backgroundColor: kblack,
-              child: Icon(
-                Icons.question_mark_outlined,
-                size: 20,
-                color: kwhite,
-              )),
-          width10
-        ],
+        actions: const [QuestionMarkIcon(), width10],
       ),
       body: Padding(
         padding: const EdgeInsets.all(22.0),
@@ -38,21 +29,27 @@ class Settings extends StatelessWidget {
                 title: "Settings",
                 size: 32.0,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               ListView.builder(
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: 6,
                   itemBuilder: (context, index) {
-                    return Column(
-                      children: [
-                        settingsItems[index],
-                        SizedBox(
-                          height: 30,
-                        )
-                      ],
+                    return InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => AccountPreferences()));
+                      },
+                      child: Column(
+                        children: [
+                          settingsItems[index],
+                          const SizedBox(
+                            height: 30,
+                          )
+                        ],
+                      ),
                     );
                   }),
               ListView.builder(
