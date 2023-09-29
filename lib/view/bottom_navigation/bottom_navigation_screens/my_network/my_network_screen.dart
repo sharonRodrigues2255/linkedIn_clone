@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/screens/invitations.dart';
-import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/screens/manage_my_network.dart';
+import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/screens/invitations/invitations.dart';
+import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/screens/manage_your_network/manage_my_network.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/widgets/custom_divider.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/widgets/gridlist.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/widgets/profilerectangle.dart';
