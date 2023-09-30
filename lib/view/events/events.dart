@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:linkedin_clone/utils/contants/colors.dart';
 import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
-import 'package:linkedin_clone/utils/contants/myfont.dart';
 import 'package:linkedin_clone/view/events/event_db/event_db.dart';
 import 'package:linkedin_clone/view/events/widgets/event_tile.dart';
 import 'package:linkedin_clone/view/profile_page/widgets/app_bar.dart';

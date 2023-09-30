@@ -4,6 +4,7 @@ import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
 import 'package:linkedin_clone/utils/contants/myfont.dart';
 import 'package:linkedin_clone/utils/contants/profile_data.dart';
 import 'package:linkedin_clone/view/messages_page/messages.dart';
+import 'package:linkedin_clone/view/search/search.dart';
 
 class AppBarWidget extends StatefulWidget {
   final int index;
@@ -38,25 +39,29 @@ class _AppBarWidgetState extends State<AppBarWidget> {
             )),
         title: Padding(
           padding: const EdgeInsets.symmetric(vertical: 8),
-          child: Container(
-            height: 30,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Color.fromARGB(255, 242, 240, 240)),
-            child: Row(
-              children: [
-                width10,
-                Icon(
-                  Icons.search,
-                  size: 20,
-                  color: Colors.black,
-                ),
-                width10,
-                Text(
-                  "search",
-                  style: myfont(weight: regular, color: kgrey, size: 18.0),
-                )
-              ],
+          child: InkWell(
+            onTap: () => Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => SearchScreen())),
+            child: Container(
+              height: 30,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Color.fromARGB(255, 242, 240, 240)),
+              child: Row(
+                children: [
+                  width10,
+                  Icon(
+                    Icons.search,
+                    size: 20,
+                    color: Colors.black,
+                  ),
+                  width10,
+                  Text(
+                    "search",
+                    style: myfont(weight: regular, color: kgrey, size: 18.0),
+                  )
+                ],
+              ),
             ),
           ),
         ),

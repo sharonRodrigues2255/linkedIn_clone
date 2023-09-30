@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
+import 'package:linkedin_clone/view/search/search.dart';
 
 class ProfileAppBarWidget extends StatelessWidget {
   const ProfileAppBarWidget(
@@ -12,7 +13,11 @@ class ProfileAppBarWidget extends StatelessWidget {
     return AppBar(
       title: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),
-        child: SearchBarWidget(title: title),
+        child: InkWell(
+          onTap: () => Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => SearchScreen())),
+          child: SearchBarWidget(title: title),
+        ),
       ),
       actions: [actions],
       bottom: bottom,
