@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:linkedin_clone/utils/contants/colors.dart';
 import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
 import 'package:linkedin_clone/utils/contants/myfont.dart';
 
@@ -15,33 +14,41 @@ class EventTileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            color: kred,
-            height: MediaQuery.sizeOf(context).width / 4.5,
-            width: MediaQuery.sizeOf(context).width / 2.5,
-            child: Text(
-              eventName[0],
-              style: myfont(size: 25),
+    return Expanded(
+      child: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              color: Colors.yellow,
+              height: MediaQuery.sizeOf(context).width / 5,
+              width: MediaQuery.sizeOf(context).width / 2.5,
+              child: Center(
+                child: Text(
+                  eventName[0],
+                  style: myfont(size: 30.0),
+                ),
+              ),
             ),
           ),
-        ),
-        Column(
-          children: [
-            Text(date),
-            height10,
-            Text(
-              eventName,
-              style: myfontNormal(weight: FontWeight.bold),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(date),
+                height10,
+                Text(
+                  eventName,
+                  overflow: TextOverflow.ellipsis,
+                  style: myfontNormal(weight: FontWeight.bold),
+                ),
+                height10,
+                Text(hostName),
+              ],
             ),
-            height10,
-            Text(hostName),
-          ],
-        )
-      ],
+          )
+        ],
+      ),
     );
   }
 }
