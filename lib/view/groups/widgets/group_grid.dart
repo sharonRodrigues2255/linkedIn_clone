@@ -50,7 +50,10 @@ class GroupGrid extends StatelessWidget {
                       height: 55,
                       width: 55,
                       child: Center(
-                        child: Text(name[0]),
+                        child: Text(
+                          name[0],
+                          style: myfont(size: 22.0),
+                        ),
                       ),
                       color: Colors.amber,
                     ),

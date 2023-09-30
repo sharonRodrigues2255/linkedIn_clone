@@ -4,7 +4,6 @@ import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
 import 'package:linkedin_clone/utils/contants/myfont.dart';
 import 'package:linkedin_clone/utils/contants/profile_data.dart';
 import 'package:linkedin_clone/utils/images/image_constants.dart';
-import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/widgets/profile_grid.dart';
 import 'package:linkedin_clone/view/groups/groups_db/more_groups_bd.dart';
 import 'package:linkedin_clone/view/groups/widgets/group_grid.dart';
 import 'package:linkedin_clone/view/profile_page/widgets/curve_rectangle.dart';

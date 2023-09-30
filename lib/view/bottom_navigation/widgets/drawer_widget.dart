@@ -3,6 +3,7 @@ import 'package:linkedin_clone/utils/contants/colors.dart';
 import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
 import 'package:linkedin_clone/utils/contants/myfont.dart';
 import 'package:linkedin_clone/utils/contants/profile_data.dart';
+import 'package:linkedin_clone/view/events/events.dart';
 import 'package:linkedin_clone/view/groups/groups.dart';
 import 'package:linkedin_clone/view/profile_page/profile_page.dart';
 import 'package:linkedin_clone/view/settings/settings.dart';
@@ -86,9 +87,15 @@ class DrawerWidget extends StatelessWidget {
                 ),
                 height20,
                 height10,
-                Text(
-                  "Events",
-                  style: myfont(),
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => EventsScreen()));
+                  },
+                  child: Text(
+                    "Events",
+                    style: myfont(),
+                  ),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 2 - 100,
