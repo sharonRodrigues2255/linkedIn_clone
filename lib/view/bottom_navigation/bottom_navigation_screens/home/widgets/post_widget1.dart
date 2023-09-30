@@ -18,8 +18,6 @@ class PostWidget1 extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 45,
-              width: 45,
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.cover,
@@ -58,9 +56,12 @@ class PostWidget1 extends StatelessWidget {
           ],
         ),
         width10,
-        Text(
-          "Follow us for the best insights",
-          style: TextStyle(fontSize: 13),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Text(
+            "Follow us for the best insights",
+            style: TextStyle(fontSize: 13),
+          ),
         ),
         SizedBox(
             child: Image(
