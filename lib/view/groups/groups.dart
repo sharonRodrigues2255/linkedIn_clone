@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:linkedin_clone/utils/contants/colors.dart';
 import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
+import 'package:linkedin_clone/utils/contants/myfont.dart';
 import 'package:linkedin_clone/utils/contants/profile_data.dart';
+import 'package:linkedin_clone/utils/images/image_constants.dart';
+import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/widgets/profile_grid.dart';
+import 'package:linkedin_clone/view/groups/groups_db/more_groups_bd.dart';
+import 'package:linkedin_clone/view/groups/widgets/group_grid.dart';
+import 'package:linkedin_clone/view/profile_page/widgets/curve_rectangle.dart';
 
 class GroupsScreen extends StatelessWidget {
   const GroupsScreen({super.key});
@@ -62,34 +68,47 @@ class GroupsScreen extends StatelessWidget {
                     ),
                   );
                 }),
-            ListView.builder(
-                itemCount: Profile.groups.length,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                      height: 200,
+                      width: 200,
+                      child: Image(image: AssetImage(ImageConstants.notifbg))),
+                  Text(
+                    "Discover groups",
+                    style: myfontNormal(size: 20.0, weight: FontWeight.bold),
+                  ),
+                  height20,
+                  Text(
+                    "Discover trusted groups that share and support your goals.",
+                    style: TextStyle(color: Colors.black54),
+                    textAlign: TextAlign.center,
+                  ),
+                  height20,
+                  CurveRectangle(
+                    mediaWidth: 250,
+                    title: "Discover",
+                    color: kblue,
+                  )
+                ],
+              ),
+            ),
+            GridView.builder(
+                padding: EdgeInsets.all(8),
+                itemCount: 10,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    childAspectRatio: 1 / 1.56,
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 8,
+                    mainAxisSpacing: 8),
                 itemBuilder: (context, index) {
-                  return ListTile(
-                    leading: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        height: 70,
-                        width: 70,
-                        color: kblack,
-                      ),
-                    ),
-                  );
+                  return GroupGrid(
+                      members: moreGroups[index]["members"],
+                      name: moreGroups[index]["name"]);
                 }),
-            ListView.builder(
-                itemCount: Profile.groups.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    leading: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        height: 70,
-                        width: 70,
-                        color: kblack,
-                      ),
-                    ),
-                  );
-                })
           ])),
     );
   }
