@@ -2,15 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:linkedin_clone/utils/contants/colors.dart';
 import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
 import 'package:linkedin_clone/utils/contants/profile_data.dart';
+import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/home/posts_db/posts_db.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/home/widgets/named_icon.dart';
 
-class PostWidget1 extends StatelessWidget {
+class PostWidget1 extends StatefulWidget {
   const PostWidget1({
     super.key,
+    required this.index,
   });
 
+  final int index;
+
+  @override
+  State<PostWidget1> createState() => _PostWidget1State();
+}
+
+class _PostWidget1State extends State<PostWidget1> {
   @override
   Widget build(BuildContext context) {
+    Color likeColor = kwhite;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -18,6 +29,8 @@ class PostWidget1 extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
+              height: 45,
+              width: 45,
               decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.cover,
@@ -30,18 +43,18 @@ class PostWidget1 extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    Profile.companies[1]["name"],
+                    posts[widget.index]["name"],
                     style:
                         TextStyle(fontWeight: FontWeight.w500, fontSize: 15.0),
                   ),
                   Text(
-                    "${Profile.companies[1]["followers"]} followwers",
+                    posts[widget.index]["designation"],
                     style: TextStyle(
                       fontSize: 10,
                     ),
                   ),
                   Text(
-                    "Promoted",
+                    posts[widget.index]["timeAgo"],
                     style: TextStyle(
                       fontSize: 10,
                     ),
@@ -59,7 +72,7 @@ class PostWidget1 extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Text(
-            "Follow us for the best insights",
+            posts[widget.index]["description"],
             style: TextStyle(fontSize: 13),
           ),
         ),
@@ -67,7 +80,8 @@ class PostWidget1 extends StatelessWidget {
             child: Image(
                 fit: BoxFit.fitWidth,
                 width: double.infinity,
-                image: AssetImage(Profile.companies[1]["picture"]))),
+                image: posts[widget.index]["image"])),
+        height10,
         Row(
           children: [
             width10,
@@ -84,7 +98,7 @@ class PostWidget1 extends StatelessWidget {
                       child: Icon(
                         Icons.thumb_up,
                         size: 9,
-                        color: kwhite,
+                        color: likeColor,
                       ),
                     ),
                   ),
@@ -127,7 +141,7 @@ class PostWidget1 extends StatelessWidget {
               ),
             ),
             Text(
-              "100 likes",
+              "${posts[widget.index]["likes"]}",
               style: TextStyle(fontSize: 12),
             ),
             Spacer(),
@@ -152,12 +166,33 @@ class PostWidget1 extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            NamedIcon(
-              icon: Icon(
-                Icons.thumb_up_alt_outlined,
-                size: 18,
+            InkWell(
+              onTap: () {
+                setState(() {
+                  posts[widget.index]["isliked"] =
+                      !posts[widget.index]["isliked"];
+                  if (posts[widget.index]["isliked"]) {
+                    posts[widget.index]["likes"] += 1;
+                  } else {
+                    posts[widget.index]["likes"] -= 1;
+                  }
+                  print(posts[widget.index]["isliked"]);
+                });
+              },
+              child: NamedIcon(
+                icon: posts[widget.index]["isliked"] == true
+                    ? Icon(
+                        Icons.thumb_up_sharp,
+                        size: 18,
+                        color: kblue,
+                      )
+                    : Icon(
+                        Icons.thumb_up_outlined,
+                        size: 18,
+                        color: kblack,
+                      ),
+                label: "Like",
               ),
-              label: "Like",
             ),
             NamedIcon(
                 icon: Icon(

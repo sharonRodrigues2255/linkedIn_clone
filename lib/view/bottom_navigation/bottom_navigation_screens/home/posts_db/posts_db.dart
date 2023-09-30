@@ -7,6 +7,9 @@ List<Map<String, dynamic>> posts = [
     "timeAgo": "1 hour ago",
     "image": PostImages.postimage1,
     "likes": 1020,
+    "description":
+        "Just finished an exciting data science project. Happy to share my learnings!",
+    "isliked": false
   },
   {
     "name": "Bob Anderson",
@@ -14,6 +17,8 @@ List<Map<String, dynamic>> posts = [
     "timeAgo": "3 hours ago",
     "image": PostImages.postImage2,
     "likes": 32440,
+    "description": "Launching a new product next week. Stay tuned for updates!",
+    "isliked": false
   },
   {
     "name": "Eva White",
@@ -21,6 +26,8 @@ List<Map<String, dynamic>> posts = [
     "timeAgo": "6 hours ago",
     "image": PostImages.postImage3,
     "likes": 3453,
+    "description": "Designed a stunning new logo. Let me know your thoughts!",
+    "isliked": false
   },
   {
     "name": "Charlie Brown",
@@ -28,6 +35,9 @@ List<Map<String, dynamic>> posts = [
     "timeAgo": "10 hours ago",
     "image": PostImages.postImage4,
     "likes": 3453,
+    "description":
+        "Running a marketing campaign for our latest product. Exciting times ahead!",
+    "isliked": false
   },
   {
     "name": "Grace Lee",
@@ -35,5 +45,8 @@ List<Map<String, dynamic>> posts = [
     "timeAgo": "12 hours ago",
     "image": PostImages.postImage5,
     "likes": 97970,
+    "description":
+        "Just released a major update for our mobile app. Check it out!",
+    "isliked": false
   },
 ];
