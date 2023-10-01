@@ -12,7 +12,7 @@ class Messagees extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: const PreferredSize(
+        appBar: PreferredSize(
             preferredSize: Size.fromHeight(90),
             child: ProfileAppBarWidget(
               title: Text(
@@ -21,7 +21,13 @@ class Messagees extends StatelessWidget {
               ),
               actions: Row(
                 children: [
-                  Icon(Icons.tune),
+                  InkWell(
+                      onTap: () {
+                        showbottomsheet(context);
+                      },
+                      child: Icon(
+                        Icons.tune,
+                      )),
                   width10,
                   Icon(Icons.more_vert),
                   width10
@@ -83,4 +89,43 @@ class Messagees extends StatelessWidget {
       ),
     );
   }
+}
+
+List listMessageTuneIcon = [
+  "Unread",
+  "My connections",
+  "InMail",
+  "Archived",
+  "Spam",
+  "Starred",
+  "Drafts"
+];
+showbottomsheet(BuildContext context) {
+  showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return ListView.builder(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: listMessageTuneIcon.length,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(listMessageTuneIcon[index]),
+                    CircleAvatar(
+                      radius: 10,
+                      backgroundColor: kblack,
+                      child: CircleAvatar(
+                        radius: 9,
+                        backgroundColor: Colors.white,
+                      ),
+                    )
+                  ],
+                ),
+              );
+            });
+      });
 }
