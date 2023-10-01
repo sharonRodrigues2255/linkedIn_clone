@@ -9,7 +9,8 @@ List<Map<String, dynamic>> posts = [
     "likes": 1020,
     "description":
         "Just finished an exciting data science project. Happy to share my learnings!",
-    "isliked": false
+    "isliked": false,
+    "comments": []
   },
   {
     "name": "Bob Anderson",
@@ -18,7 +19,8 @@ List<Map<String, dynamic>> posts = [
     "image": PostImages.postImage2,
     "likes": 32440,
     "description": "Launching a new product next week. Stay tuned for updates!",
-    "isliked": false
+    "isliked": false,
+    "comments": []
   },
   {
     "name": "Eva White",
@@ -27,7 +29,8 @@ List<Map<String, dynamic>> posts = [
     "image": PostImages.postImage3,
     "likes": 3453,
     "description": "Designed a stunning new logo. Let me know your thoughts!",
-    "isliked": false
+    "isliked": false,
+    "comments": []
   },
   {
     "name": "Charlie Brown",
@@ -37,7 +40,8 @@ List<Map<String, dynamic>> posts = [
     "likes": 3453,
     "description":
         "Running a marketing campaign for our latest product. Exciting times ahead!",
-    "isliked": false
+    "isliked": false,
+    "comments": []
   },
   {
     "name": "Grace Lee",
@@ -47,6 +51,7 @@ List<Map<String, dynamic>> posts = [
     "likes": 97970,
     "description":
         "Just released a major update for our mobile app. Check it out!",
-    "isliked": false
+    "isliked": false,
+    "comments": []
   },
 ];
