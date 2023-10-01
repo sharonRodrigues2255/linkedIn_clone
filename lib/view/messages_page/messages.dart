@@ -29,7 +29,11 @@ class Messagees extends StatelessWidget {
                         Icons.tune,
                       )),
                   width10,
-                  Icon(Icons.more_vert),
+                  InkWell(
+                      onTap: () {
+                        showbottomsheet2(context);
+                      },
+                      child: Icon(Icons.more_vert)),
                   width10
                 ],
               ),
@@ -127,5 +131,51 @@ showbottomsheet(BuildContext context) {
                 ),
               );
             });
+      });
+}
+
+showbottomsheet2(BuildContext context) {
+  showModalBottomSheet(
+      context: (context),
+      builder: (BuildContext context) {
+        return Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: ListView(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Icon(Icons.checklist_rounded),
+                    width20,
+                    Text("Manage chats")
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Icon(Icons.calendar_month),
+                    width20,
+                    Text("Set away message")
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Icon(Icons.settings),
+                    width20,
+                    Text("Manage Settings")
+                  ],
+                ),
+              )
+            ],
+          ),
+        );
       });
 }
