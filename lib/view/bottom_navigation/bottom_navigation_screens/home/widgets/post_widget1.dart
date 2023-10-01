@@ -3,6 +3,7 @@ import 'package:linkedin_clone/utils/contants/colors.dart';
 import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
 import 'package:linkedin_clone/utils/contants/profile_data.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/home/posts_db/posts_db.dart';
+import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/home/screens/comments_screen.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/home/widgets/named_icon.dart';
 
 class PostWidget1 extends StatefulWidget {
@@ -195,9 +196,17 @@ class _PostWidget1State extends State<PostWidget1> {
               ),
             ),
             NamedIcon(
-                icon: Icon(
-                  Icons.comment,
-                  size: 18,
+                icon: InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: ((context) => CommentScreen(
+                              index: widget.index,
+                            ))));
+                  },
+                  child: Icon(
+                    Icons.comment,
+                    size: 18,
+                  ),
                 ),
                 label: "comment"),
             NamedIcon(
