@@ -20,7 +20,7 @@ class _MessageScreenState extends State<MessageScreen> {
     final List<Map<String, dynamic>> data =
         messagesData[widget.index]["messages"];
     TextEditingController textEditingController = TextEditingController();
-    bool textisempty = true;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(messagesData[widget.index]["name"]),
@@ -232,11 +232,6 @@ class _MessageScreenState extends State<MessageScreen> {
                       height: 40,
                       width: MediaQuery.sizeOf(context).width - 70,
                       child: TextFormField(
-                        onChanged: (value) {
-                          textEditingController.text.isNotEmpty
-                              ? textisempty = false
-                              : textisempty = true;
-                        },
                         controller: textEditingController,
                         decoration: InputDecoration(
                             contentPadding: EdgeInsets.all(8),
