@@ -1,6 +1,8 @@
 List<Map<String, dynamic>> messagesData = [
   {
     'name': 'Elon',
+    "picture": "assets/images/peopleimages/ellonmusk.jpg",
+    "headline": "CEO Tesla",
     'messages': [
       {
         "type": "s",
@@ -16,6 +18,8 @@ List<Map<String, dynamic>> messagesData = [
   },
   {
     'name': 'Bill',
+    "headline": "CEO Microsoft",
+    "picture": "assets/images/peopleimages/billgates.jpg",
     'messages': [
       {
         "type": "s",
@@ -31,6 +35,8 @@ List<Map<String, dynamic>> messagesData = [
   },
   {
     'name': 'Google',
+    "headline": "a company",
+    "picture": "assets/images/companiesicon/goolge.png",
     'messages': [
       {
         "type": "r",
