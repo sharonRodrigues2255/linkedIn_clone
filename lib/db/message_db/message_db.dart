@@ -13,7 +13,17 @@ List<Map<String, dynamic>> messagesData = [
         "type": "r",
         "message": "hey",
         "time": DateTime.now().subtract(Duration(days: 1))
-      }
+      },
+      {
+        "type": "s",
+        "message": "hello",
+        "time": DateTime.now().subtract(Duration(days: 1))
+      },
+      {
+        "type": "s",
+        "message": "hello",
+        "time": DateTime.now().subtract(Duration(days: 1))
+      },
     ]
   },
   {
