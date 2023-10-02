@@ -54,7 +54,7 @@ class Messagees extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => MessageScreen(
-                              name: messagesData[index]["name"],
+                              index: index,
                             )));
                   },
                   child: ListTile(
