@@ -1,4 +1,4 @@
-import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/jobs/jobs_database/jobs_db.dart';
+import 'package:linkedin_clone/model/jobs_database/jobs_db.dart';
 
 List<Map<String, dynamic>> moreJobs = [];
 List<Map<String, dynamic>> recomendedJobs = [];

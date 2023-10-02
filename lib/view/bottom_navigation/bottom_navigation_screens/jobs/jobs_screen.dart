@@ -3,7 +3,7 @@ import 'package:linkedin_clone/utils/contants/colors.dart';
 import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
 import 'package:linkedin_clone/utils/contants/myfont.dart';
 import 'package:linkedin_clone/utils/images/image_constants.dart';
-import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/jobs/jobs_database/job_functions.dart';
+import 'package:linkedin_clone/model/jobs_database/job_functions.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/jobs/widgets/joblistbuilder.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/my_network/widgets/custom_divider.dart';
 import 'package:linkedin_clone/view/profile_page/widgets/show_all_widget.dart';

@@ -48,21 +48,23 @@ class Messagees extends StatelessWidget {
           ListView.builder(
               itemCount: Profile.connection.length,
               itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(
-                    Profile.connection[index]["name"],
-                    style: TextStyle(fontSize: 14),
-                  ),
-                  subtitle: Text(
-                    "hello",
-                    style: TextStyle(fontSize: 12),
-                  ),
-                  leading: CircleAvatar(
-                    radius: 25,
-                    child: ClipOval(
-                      child: Image(
-                          image:
-                              AssetImage(Profile.connection[index]["picture"])),
+                return InkWell(
+                  child: ListTile(
+                    title: Text(
+                      Profile.connection[index]["name"],
+                      style: TextStyle(fontSize: 14),
+                    ),
+                    subtitle: Text(
+                      "hello",
+                      style: TextStyle(fontSize: 12),
+                    ),
+                    leading: CircleAvatar(
+                      radius: 25,
+                      child: ClipOval(
+                        child: Image(
+                            image: AssetImage(
+                                Profile.connection[index]["picture"])),
+                      ),
                     ),
                   ),
                 );

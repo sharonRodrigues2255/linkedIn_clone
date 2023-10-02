@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:linkedin_clone/utils/contants/colors.dart';
 import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
 import 'package:linkedin_clone/utils/contants/profile_data.dart';
-import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/home/posts_db/posts_db.dart';
+import 'package:linkedin_clone/db/posts_db/posts_db.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/home/widgets/post_widget1.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/notifications/database_notifs/db.dart';
-import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/notifications/database_notifs/notifs_format.dart';
+import 'package:linkedin_clone/db/database_notifs/db.dart';
+import 'package:linkedin_clone/db/database_notifs/notifs_format.dart';
 
 class All extends StatelessWidget {
   const All({super.key});
