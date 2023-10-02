@@ -5,15 +5,25 @@ import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
 import 'package:linkedin_clone/utils/contants/myfont.dart';
 import 'package:linkedin_clone/utils/contants/profile_data.dart';
 
-class MessageScreen extends StatelessWidget {
+class MessageScreen extends StatefulWidget {
   const MessageScreen({super.key, required this.index});
 
   final int index;
+
+  @override
+  State<MessageScreen> createState() => _MessageScreenState();
+}
+
+class _MessageScreenState extends State<MessageScreen> {
   @override
   Widget build(BuildContext context) {
+    final List<Map<String, dynamic>> data =
+        messagesData[widget.index]["messages"];
+    TextEditingController textEditingController = TextEditingController();
+    bool textisempty = true;
     return Scaffold(
       appBar: AppBar(
-        title: Text(messagesData[index]["name"]),
+        title: Text(messagesData[widget.index]["name"]),
         actions: [
           Icon(Icons.more_vert),
           width10,
@@ -36,25 +46,26 @@ class MessageScreen extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       backgroundImage:
-                          AssetImage(messagesData[index]["picture"]),
+                          AssetImage(messagesData[widget.index]["picture"]),
                       radius: 30,
                     ),
                     height10,
                     Text(
-                      messagesData[index]["name"],
+                      messagesData[widget.index]["name"],
                       style: myfontNormal(weight: FontWeight.bold),
                     ),
                     Text(
-                      messagesData[index]["headline"],
+                      messagesData[widget.index]["headline"],
                     ),
                     ListView.builder(
                         shrinkWrap: true,
                         physics: NeverScrollableScrollPhysics(),
-                        itemCount: messagesData[index]["messages"].length,
+                        itemCount:
+                            messagesData[widget.index]["messages"].length,
                         itemBuilder: (context, i) {
-                          final name = messagesData[index]["name"];
+                          final name = messagesData[widget.index]["name"];
                           final List<Map<String, dynamic>> data =
-                              messagesData[index]["messages"];
+                              messagesData[widget.index]["messages"];
                           final String type = data[i]["type"];
 
                           final msg = data[i]["message"];
@@ -113,7 +124,11 @@ class MessageScreen extends StatelessWidget {
                                   if (data[i]["type"] == "r")
                                     i > 0 &&
                                             data[i]["type"] ==
-                                                data[i - 1]["type"]
+                                                data[i - 1]["type"] &&
+                                            data[i]["time"].month ==
+                                                data[i - 1]["time"].month &&
+                                            data[i]["time"].day ==
+                                                data[i - 1]["time"].day
                                         ? SizedBox(
                                             width: 36,
                                           )
@@ -123,7 +138,8 @@ class MessageScreen extends StatelessWidget {
                                             decoration: BoxDecoration(
                                                 image: DecorationImage(
                                                     image: AssetImage(
-                                                        messagesData[index]
+                                                        messagesData[
+                                                                widget.index]
                                                             ["picture"])),
                                                 borderRadius:
                                                     BorderRadius.circular(20)),
@@ -131,7 +147,11 @@ class MessageScreen extends StatelessWidget {
                                   else
                                     i > 0 &&
                                             data[i]["type"] ==
-                                                data[i - 1]["type"]
+                                                data[i - 1]["type"] &&
+                                            data[i]["time"].month ==
+                                                data[i - 1]["time"].month &&
+                                            data[i]["time"].day ==
+                                                data[i - 1]["time"].day
                                         ? SizedBox(
                                             width: 36,
                                           )
@@ -152,7 +172,11 @@ class MessageScreen extends StatelessWidget {
                                     children: [
                                       i > 0 &&
                                               data[i]["type"] ==
-                                                  data[i - 1]["type"]
+                                                  data[i - 1]["type"] &&
+                                              data[i]["time"].month ==
+                                                  data[i - 1]["time"].month &&
+                                              data[i]["time"].day ==
+                                                  data[i - 1]["time"].day
                                           ? SizedBox()
                                           : Row(
                                               children: [
@@ -192,35 +216,54 @@ class MessageScreen extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.bottomCenter,
-            child: Card(
-              elevation: 5,
-              child: Container(
-                height: 50,
-                child: Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Icon(
-                        Icons.add,
-                        color: kblue,
-                        size: 25,
+            child: Container(
+              color: kwhite,
+              height: 50,
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Icon(
+                      Icons.add,
+                      color: kblue,
+                      size: 25,
+                    ),
+                    Container(
+                      height: 40,
+                      width: MediaQuery.sizeOf(context).width - 70,
+                      child: TextFormField(
+                        onChanged: (value) {
+                          textEditingController.text.isNotEmpty
+                              ? textisempty = false
+                              : textisempty = true;
+                        },
+                        controller: textEditingController,
+                        decoration: InputDecoration(
+                            contentPadding: EdgeInsets.all(8),
+                            filled: true,
+                            fillColor: Colors.black12,
+                            hintText: "Write a message...",
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide.none)),
                       ),
-                      Container(
-                        height: 40,
-                        width: MediaQuery.sizeOf(context).width - 70,
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(8),
-                              filled: true,
-                              fillColor: Colors.black12,
-                              hintText: "Write a message...",
-                              border: OutlineInputBorder(
-                                  borderSide: BorderSide.none)),
-                        ),
-                      ),
-                      Icon(Icons.mic_none_sharp)
-                    ],
-                  ),
+                    ),
+                    InkWell(
+                        onTap: () {
+                          if (textEditingController.text.isNotEmpty) {
+                            textEditingController.text;
+                            final map = {
+                              "type": "s",
+                              "message": textEditingController.text,
+                              "time": DateTime.now()
+                            };
+                            setState(() {
+                              data.add(map);
+                            });
+                          }
+                          ;
+                        },
+                        child: Icon(Icons.send))
+                  ],
                 ),
               ),
             ),
