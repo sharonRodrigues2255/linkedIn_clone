@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:linkedin_clone/db/message_db/message_db.dart';
 import 'package:linkedin_clone/utils/contants/colors.dart';
 import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
 import 'package:linkedin_clone/utils/contants/profile_data.dart';
+import 'package:linkedin_clone/view/messages_page/message_screen.dart';
 import 'package:linkedin_clone/view/profile_page/widgets/app_bar.dart';
 
 class Messagees extends StatelessWidget {
@@ -46,12 +48,18 @@ class Messagees extends StatelessWidget {
             )),
         body: TabBarView(children: [
           ListView.builder(
-              itemCount: Profile.connection.length,
+              itemCount: messagesData.length,
               itemBuilder: (context, index) {
                 return InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => MessageScreen(
+                              name: messagesData[index]["name"],
+                            )));
+                  },
                   child: ListTile(
                     title: Text(
-                      Profile.connection[index]["name"],
+                      messagesData[index]["name"],
                       style: TextStyle(fontSize: 14),
                     ),
                     subtitle: Text(

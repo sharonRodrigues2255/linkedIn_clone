@@ -3,22 +3,14 @@ List<Map<String, dynamic>> messagesData = [
     'name': 'Elon',
     'messages': [
       {
-        'send': [
-          {
-            'message': 'Hello, Bill! How are you?',
-            'time': DateTime.now().subtract(Duration(days: 2))
-          },
-          {
-            'message': 'Hey, Google! What\'s new?',
-            'time': DateTime.now().subtract(Duration(days: 1))
-          }
-        ],
-        'received': [
-          {
-            'message': 'Hi Elon! I\'m doing well, thanks!',
-            'time': DateTime.now().subtract(Duration(days: 2))
-          }
-        ]
+        "type": "s",
+        "message": "hello",
+        "time": DateTime.now().subtract(Duration(days: 1))
+      },
+      {
+        "type": "r",
+        "message": "hey",
+        "time": DateTime.now().subtract(Duration(days: 1))
       }
     ]
   },
@@ -26,22 +18,14 @@ List<Map<String, dynamic>> messagesData = [
     'name': 'Bill',
     'messages': [
       {
-        'send': [
-          {
-            'message': 'Hi Elon! I\'m good. How about you?',
-            'time': DateTime.now().subtract(Duration(days: 2))
-          }
-        ],
-        'received': [
-          {
-            'message': 'Hello, Bill! I\'m doing great!',
-            'time': DateTime.now().subtract(Duration(days: 2))
-          },
-          {
-            'message': 'Hey, Google! Let\'s catch up soon.',
-            'time': DateTime.now().subtract(Duration(days: 1))
-          }
-        ]
+        "type": "s",
+        "message": "hello bro",
+        "time": DateTime.now().subtract(Duration(days: 1))
+      },
+      {
+        "type": "r",
+        "message": "Ssup buddy ",
+        "time": DateTime.now().subtract(Duration(days: 1))
       }
     ]
   },
@@ -49,22 +33,14 @@ List<Map<String, dynamic>> messagesData = [
     'name': 'Google',
     'messages': [
       {
-        'send': [
-          {
-            'message': 'Hello, everyone! What\'s happening?',
-            'time': DateTime.now().subtract(Duration(days: 1))
-          }
-        ],
-        'received': [
-          {
-            'message': 'Hey Elon! Exciting things at SpaceX?',
-            'time': DateTime.now().subtract(Duration(days: 1))
-          },
-          {
-            'message': 'Hi Bill! Let\'s schedule a meeting.',
-            'time': DateTime.now().subtract(Duration(days: 1))
-          }
-        ]
+        "type": "r",
+        "message": "We, have a job offer for you",
+        "time": DateTime.now().subtract(Duration(days: 1))
+      },
+      {
+        "type": "s",
+        "message": "Nah, find someone else",
+        "time": DateTime.now().subtract(Duration(days: 1))
       }
     ]
   }
