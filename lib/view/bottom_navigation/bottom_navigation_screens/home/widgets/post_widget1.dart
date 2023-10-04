@@ -5,6 +5,7 @@ import 'package:linkedin_clone/utils/contants/profile_data.dart';
 import 'package:linkedin_clone/db/posts_db/posts_db.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/home/screens/comments_screen.dart';
 import 'package:linkedin_clone/view/bottom_navigation/bottom_navigation_screens/home/widgets/named_icon.dart';
+import 'package:linkedin_clone/view/other_profiles/other_profiles_screen.dart';
 
 class PostWidget1 extends StatefulWidget {
   const PostWidget1({
@@ -43,10 +44,19 @@ class _PostWidget1State extends State<PostWidget1> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    posts[widget.index]["name"],
-                    style:
-                        TextStyle(fontWeight: FontWeight.w500, fontSize: 15.0),
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return OtherProfiles(
+                            userName: posts[widget.index]["name"]);
+                      }));
+                    },
+                    child: Text(
+                      posts[widget.index]["name"],
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500, fontSize: 15.0),
+                    ),
                   ),
                   Text(
                     posts[widget.index]["designation"],
