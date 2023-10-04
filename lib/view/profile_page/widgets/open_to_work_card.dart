@@ -5,8 +5,10 @@ class OpenToWorkCard extends StatelessWidget {
   const OpenToWorkCard({
     super.key,
     this.headline = "Flutter developer",
+    this.ownprofile = true,
   });
   final String headline;
+  final ownprofile;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,10 +26,12 @@ class OpenToWorkCard extends StatelessWidget {
                 "Open to work",
                 style: TextStyle(fontWeight: FontWeight.w600),
               ),
-              Icon(
-                Icons.edit_outlined,
-                size: 20,
-              )
+              ownprofile
+                  ? Icon(
+                      Icons.edit_outlined,
+                      size: 20,
+                    )
+                  : SizedBox()
             ],
           ),
           Text("${headline} roles"),

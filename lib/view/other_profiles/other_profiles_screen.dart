@@ -145,6 +145,7 @@ class OtherProfiles extends StatelessWidget {
                   ),
                   height20,
                   OpenToWorkCard(
+                    ownprofile: false,
                     headline: profileData["services"],
                   )
                 ],
