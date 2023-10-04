@@ -12,7 +12,11 @@ List<Map<String, dynamic>> posts = [
         "Just finished an exciting data science project. Happy to share my learnings!",
     "isliked": false,
     "comments": [],
-    "colleges": ["College A", "College B"]
+    "location": "New York, NY, USA",
+    "followers": 1500,
+    "services": "Data Science , Machine Learning ,Analytics",
+    "connections": 500,
+    "college": "XYZ University",
   },
   {
     "name": "Bob Anderson",
@@ -24,7 +28,11 @@ List<Map<String, dynamic>> posts = [
     "description": "Launching a new product next week. Stay tuned for updates!",
     "isliked": false,
     "comments": [],
-    "colleges": ["College C", "College D"]
+    "location": "San Francisco, CA, USA",
+    "followers": 5000,
+    "services": ["Product Management", "Product Launch", "Marketing"],
+    "connections": 1000,
+    "college": "ABC College",
   },
   {
     "name": "Eva White",
@@ -36,7 +44,11 @@ List<Map<String, dynamic>> posts = [
     "description": "Designed a stunning new logo. Let me know your thoughts!",
     "isliked": false,
     "comments": [],
-    "colleges": ["College E", "College F"]
+    "location": "Los Angeles, CA, USA",
+    "followers": 2000,
+    "services": ["Graphic Design", "Brand Identity", "Illustration"],
+    "connections": 700,
+    "college": "PQR Institute",
   },
   {
     "name": "Charlie Brown",
@@ -49,7 +61,15 @@ List<Map<String, dynamic>> posts = [
         "Running a marketing campaign for our latest product. Exciting times ahead!",
     "isliked": false,
     "comments": [],
-    "colleges": ["College G", "College H"]
+    "location": "Chicago, IL, USA",
+    "followers": 3000,
+    "services": [
+      "Digital Marketing",
+      "Content Strategy",
+      "Campaign Management"
+    ],
+    "connections": 900,
+    "college": "LMN University",
   },
   {
     "name": "Grace Lee",
@@ -62,6 +82,10 @@ List<Map<String, dynamic>> posts = [
         "Just released a major update for our mobile app. Check it out!",
     "isliked": false,
     "comments": [],
-    "colleges": ["College I", "College J"]
+    "location": "Austin, TX, USA",
+    "followers": 10000,
+    "services": ["iOS Development", "Mobile App Design", "User Experience"],
+    "connections": 1500,
+    "college": "RST College",
   },
 ];

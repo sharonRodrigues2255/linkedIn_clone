@@ -48,8 +48,7 @@ class _PostWidget1State extends State<PostWidget1> {
                     onTap: () {
                       Navigator.of(context)
                           .push(MaterialPageRoute(builder: (context) {
-                        return OtherProfiles(
-                            userName: posts[widget.index]["name"]);
+                        return OtherProfiles(profileData: posts[widget.index]);
                       }));
                     },
                     child: Text(
