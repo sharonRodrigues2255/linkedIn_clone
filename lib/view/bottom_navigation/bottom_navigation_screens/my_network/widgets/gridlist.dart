@@ -31,7 +31,10 @@ class GridList extends StatelessWidget {
                 crossAxisSpacing: 8,
                 mainAxisSpacing: 8),
             itemBuilder: (context, index) {
-              return ProfileGrid(mediaWidth: mediaWidth);
+              return ProfileGrid(
+                mediaWidth: mediaWidth,
+                index: index,
+              );
             }),
         height10,
         Text(

@@ -285,27 +285,27 @@ class Profile {
 
   static List<Map> peopleIKnow = [
     {
-      "name": "Person1",
+      "name": "Anne",
       "headline": "developer",
       "picture": "assets/images/person_avatars/person1.jpg",
     },
     {
-      "name": "Person2",
+      "name": "Anna",
       "headline": "developer",
       "picture": "assets/images/person_avatars/person2.png",
     },
     {
-      "name": "Person3",
+      "name": "Annie",
       "headline": "developer",
       "picture": "assets/images/person_avatars/person3.png",
     },
     {
-      "name": "Peson4",
+      "name": "Ann",
       "headline": "developer",
       "picture": "assets/images/person_avatars/person4.png",
     },
     {
-      "name": "Person5",
+      "name": "Annamika",
       "headline": "developer",
       "picture": "assets/images/person_avatars/person5.jpg",
     },

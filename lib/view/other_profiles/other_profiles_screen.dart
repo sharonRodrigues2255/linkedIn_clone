@@ -3,14 +3,16 @@ import 'package:linkedin_clone/utils/contants/colors.dart';
 import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
 import 'package:linkedin_clone/utils/contants/myfont.dart';
 import 'package:linkedin_clone/view/profile_page/widgets/app_bar.dart';
-import 'package:linkedin_clone/view/profile_page/widgets/curve_rectangle.dart';
 import 'package:linkedin_clone/view/profile_page/widgets/following_rectangle.dart';
 import 'package:linkedin_clone/view/profile_page/widgets/open_to_work_card.dart';
 
 class OtherProfiles extends StatelessWidget {
-  const OtherProfiles({super.key, required this.profileData});
+  const OtherProfiles(
+      {super.key, required this.profileData, this.fromMyNetwork = false});
 
   final Map<String, dynamic> profileData;
+  final bool fromMyNetwork;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,36 +103,63 @@ class OtherProfiles extends StatelessWidget {
                           width: 140,
                           title: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  Icons.person_add_sharp,
-                                  size: 18,
-                                ),
-                                width10,
-                                Text("Connect"),
-                              ],
-                            ),
+                            child: fromMyNetwork
+                                ? Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.send,
+                                        size: 18,
+                                      ),
+                                      width10,
+                                      Text("Message"),
+                                    ],
+                                  )
+                                : Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.person_add_sharp,
+                                        size: 18,
+                                      ),
+                                      width10,
+                                      Text("Connect"),
+                                    ],
+                                  ),
                           )),
                       width10,
                       FollowingRectangle(
                           width: 140,
                           color: Colors.blue,
-                          title: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.send,
-                                color: kblue,
-                              ),
-                              width10,
-                              Text(
-                                "Message",
-                                style: TextStyle(color: kblue),
-                              )
-                            ],
-                          )),
+                          title: fromMyNetwork
+                              ? Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.access_time,
+                                      color: kblue,
+                                    ),
+                                    width10,
+                                    Text(
+                                      "Pending",
+                                      style: TextStyle(color: kblack),
+                                    )
+                                  ],
+                                )
+                              : Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.send,
+                                      color: kblue,
+                                    ),
+                                    width10,
+                                    Text(
+                                      "Message",
+                                      style: TextStyle(color: kblue),
+                                    )
+                                  ],
+                                )),
                       width20,
                       CircleAvatar(
                         radius: 16,
