@@ -24,7 +24,7 @@ class PostScreen extends StatelessWidget {
           CircleAvatar(
             radius: 15,
             child: ClipOval(
-              child: Image(image: NetworkImage(Profile.profilePicture)),
+              child: Image(image: Profile.profilePicture),
             ),
           ),
           width10,

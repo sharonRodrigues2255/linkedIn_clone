@@ -156,7 +156,7 @@ class _CommentScreenState extends State<CommentScreen> {
                   children: [
                     CircleAvatar(
                       radius: 18,
-                      backgroundImage: NetworkImage(Profile.profilePicture),
+                      backgroundImage: Profile.profilePicture,
                     ),
                     width10,
                     Expanded(
@@ -177,7 +177,7 @@ class _CommentScreenState extends State<CommentScreen> {
                         String text = textEditingController.text;
                         if (text.trim().isNotEmpty) {
                           Map<String, dynamic> commentDetails = {
-                            "image": NetworkImage(Profile.profilePicture),
+                            "image": Profile.profilePicture,
                             "name": Profile.userName,
                             "comment": text
                           };

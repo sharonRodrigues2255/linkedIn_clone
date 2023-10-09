@@ -160,8 +160,8 @@ class _MessageScreenState extends State<MessageScreen> {
                                             width: 36,
                                             decoration: BoxDecoration(
                                                 image: DecorationImage(
-                                                    image: NetworkImage(Profile
-                                                        .profilePicture)),
+                                                    image:
+                                                        Profile.profilePicture),
                                                 borderRadius:
                                                     BorderRadius.circular(20)),
                                           ),

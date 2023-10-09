@@ -39,9 +39,7 @@ class DrawerWidget extends StatelessWidget {
                           child: Image(
                             height: 60,
                             width: 60,
-                            image: NetworkImage(
-                              Profile.profilePicture,
-                            ),
+                            image: Profile.profilePicture,
                             fit: BoxFit.cover,
                           ),
                         ),

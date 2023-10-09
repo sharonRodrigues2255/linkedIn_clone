@@ -1,8 +1,10 @@
+import 'package:flutter/material.dart';
+
 class Profile {
   static String userName = "User Name";
 
-  static String profilePicture =
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgXVBPl63gKGj4TD_QloEqQgu775BPXvrmUptWxjKjKSLy1iDdKOeg4rQLAyUy3C1plqE&usqp=CAU";
+  static ImageProvider profilePicture = NetworkImage(
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgXVBPl63gKGj4TD_QloEqQgu775BPXvrmUptWxjKjKSLy1iDdKOeg4rQLAyUy3C1plqE&usqp=CAU");
 
   static String backgroundImage =
       "assets/images/profileimages/backgroundimage.jpg";

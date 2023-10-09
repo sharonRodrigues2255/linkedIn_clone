@@ -3,6 +3,7 @@ import 'package:linkedin_clone/utils/contants/colors.dart';
 import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
 import 'package:linkedin_clone/utils/contants/myfont.dart';
 import 'package:linkedin_clone/utils/contants/profile_data.dart';
+import 'package:linkedin_clone/view/profile_page/profile_page.dart';
 
 class ProfileCardWidget extends StatelessWidget {
   const ProfileCardWidget({
@@ -39,23 +40,28 @@ class ProfileCardWidget extends StatelessWidget {
                       child: Image(
                           height: 136,
                           width: 136,
-                          image: NetworkImage(Profile.profilePicture)),
+                          image: Profile.profilePicture),
                     ),
                   ),
                 ),
               ),
-              const Positioned(
+              Positioned(
                 bottom: 12,
                 left: 110,
-                child: CircleAvatar(
-                  radius: 15,
-                  backgroundColor: kwhite,
+                child: InkWell(
+                  onTap: () {
+                    showProfilebottomSheet(context);
+                  },
                   child: CircleAvatar(
-                    radius: 13,
-                    backgroundColor: kblue,
-                    child: Icon(
-                      Icons.add,
-                      color: kwhite,
+                    radius: 15,
+                    backgroundColor: kwhite,
+                    child: CircleAvatar(
+                      radius: 13,
+                      backgroundColor: kblue,
+                      child: Icon(
+                        Icons.add,
+                        color: kwhite,
+                      ),
                     ),
                   ),
                 ),

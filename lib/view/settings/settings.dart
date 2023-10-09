@@ -29,7 +29,7 @@ class Settings extends StatelessWidget {
               SettingsItems(
                 icon: CircleAvatar(
                   radius: 20,
-                  backgroundImage: NetworkImage(Profile.profilePicture),
+                  backgroundImage: Profile.profilePicture,
                 ),
                 title: "Settings",
                 size: 32.0,

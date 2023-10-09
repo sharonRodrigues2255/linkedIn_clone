@@ -3,6 +3,7 @@ import 'package:linkedin_clone/utils/contants/colors.dart';
 import 'package:linkedin_clone/utils/contants/contant_sizes.dart';
 import 'package:linkedin_clone/utils/contants/myfont.dart';
 import 'package:linkedin_clone/utils/contants/profile_data.dart';
+import 'package:linkedin_clone/view/profile_page/screens/profile_photo.dart';
 import 'package:linkedin_clone/view/profile_page/tabs/companies.dart';
 import 'package:linkedin_clone/view/profile_page/tabs/top_voices.dart';
 import 'package:linkedin_clone/view/profile_page/tabs/groups.dart';
@@ -363,4 +364,51 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
+}
+
+showProfilebottomSheet(BuildContext context) {
+  showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Container(
+          height: 100,
+          width: double.infinity,
+          color: kwhite,
+          child: Column(
+            children: [
+              height20,
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => ProfilePhoto()));
+                },
+                child: Row(
+                  children: [
+                    width20,
+                    Icon(Icons.camera_alt),
+                    width20,
+                    Text(
+                      "View or edit profile photo",
+                      style: myfontNormal(weight: FontWeight.w400),
+                    )
+                  ],
+                ),
+              ),
+              height20,
+              Row(
+                children: [
+                  width20,
+                  Icon(Icons.photo_sharp),
+                  width20,
+                  Text(
+                    "Add frame",
+                    style: myfontNormal(weight: FontWeight.w400),
+                  )
+                ],
+              )
+            ],
+          ),
+        );
+      });
 }

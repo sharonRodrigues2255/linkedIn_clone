@@ -33,8 +33,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                     shape: BoxShape.circle,
                     color: kblack,
                     image: DecorationImage(
-                        fit: BoxFit.contain,
-                        image: NetworkImage(Profile.profilePicture))),
+                        fit: BoxFit.contain, image: Profile.profilePicture)),
               ),
             )),
         title: Padding(
