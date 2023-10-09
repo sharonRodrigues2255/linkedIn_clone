@@ -78,7 +78,7 @@ class _PostWidget1State extends State<PostWidget1> {
             width10,
           ],
         ),
-        width10,
+        height10,
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Text(
@@ -86,6 +86,7 @@ class _PostWidget1State extends State<PostWidget1> {
             style: TextStyle(fontSize: 13),
           ),
         ),
+        height10,
         SizedBox(
             child: Image(
                 fit: BoxFit.fitWidth,
@@ -172,6 +173,7 @@ class _PostWidget1State extends State<PostWidget1> {
             ),
           ],
         ),
+        height10,
         Divider(),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
