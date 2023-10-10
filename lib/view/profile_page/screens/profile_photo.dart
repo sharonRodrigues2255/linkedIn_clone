@@ -76,6 +76,7 @@ class _ProfilePhotoState extends State<ProfilePhoto> {
                     ),
                     TextButton.icon(
                       onPressed: () async {
+                        Navigator.pop(context);
                         final profilePic = await ImagePicker()
                             .pickImage(source: ImageSource.camera);
 

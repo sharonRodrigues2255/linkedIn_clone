@@ -12,7 +12,7 @@ class AnimatedBottomNavigationBar extends StatelessWidget {
     return AnimatedContainer(
       duration: Duration(milliseconds: 1000),
       curve: Curves.fastLinearToSlowEaseIn,
-      height: isVisible ? 60 : 0,
+      height: isVisible ? 55 : 0,
       child: SingleChildScrollView(
         child: BottomNavigationBar(
           onTap: changeindex,
@@ -31,12 +31,12 @@ class AnimatedBottomNavigationBar extends StatelessWidget {
                 ),
                 label: "My Network"),
             BottomNavigationBarItem(
-                icon: IconButton(
-                    onPressed: () {
+                icon: InkWell(
+                    onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => PostScreen()));
                     },
-                    icon: Icon(Icons.add_box)),
+                    child: Icon(Icons.add_box)),
                 label: "Post"),
             BottomNavigationBarItem(
                 icon: Icon(
