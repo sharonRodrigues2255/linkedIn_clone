@@ -10,7 +10,6 @@ class NamedIcon extends StatelessWidget {
     return Column(
       children: [
         Transform.flip(
-          flipX: true,
           child: icon,
         ),
         Text(label)
